@@ -1,0 +1,324 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    overflow: hidden !important;
+    height: 100% !important;
+    height: 100dvh !important;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+* {
+  scrollbar-width: none !important;
+}
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.font-game {
+  font-family: 'Fredoka', 'Outfit', cursive, sans-serif;
+}
+
+/* 3D Toy Button Press Effect */
+.btn-3d {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.28), 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+.btn-3d:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.28), 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Wood board texture effect */
+.wood-panel {
+  background: linear-gradient(180deg, #b06b2f 0%, #7d4415 65%, #592e0b 100%);
+  border: 3px solid #3c1a04;
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.35), inset 0 -3px 0 rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+.wood-sign {
+  background: linear-gradient(180deg, #d4934e 0%, #a46227 50%, #7a3e11 100%);
+  border: 4px solid #4a2105;
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.45), inset 0 -4px 0 rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Block Stylings */
+.block-3d-red {
+  background: linear-gradient(180deg, #ff5b79 0%, #f43f5e 40%, #be123c 100%);
+  border-top: 3px solid #ff94a7;
+  border-left: 2px solid #ff758f;
+  border-right: 2px solid #9f1239;
+  border-bottom: 4px solid #881337;
+  box-shadow: 0 4px 6px rgba(136, 19, 55, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.block-3d-yellow {
+  background: linear-gradient(180deg, #ffea6b 0%, #facc15 40%, #ca8a04 100%);
+  border-top: 3px solid #fff59d;
+  border-left: 2px solid #fde047;
+  border-right: 2px solid #a16207;
+  border-bottom: 4px solid #854d0e;
+  box-shadow: 0 4px 6px rgba(161, 98, 7, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.block-3d-blue {
+  background: linear-gradient(180deg, #4dc3ff 0%, #0ea5e9 40%, #0369a1 100%);
+  border-top: 3px solid #9ae2ff;
+  border-left: 2px solid #38bdf8;
+  border-right: 2px solid #075985;
+  border-bottom: 4px solid #0c4a6e;
+  box-shadow: 0 4px 6px rgba(3, 105, 161, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.block-3d-green {
+  background: linear-gradient(180deg, #58e27c 0%, #22c55e 40%, #15803d 100%);
+  border-top: 3px solid #9ef5b4;
+  border-left: 2px solid #4ade80;
+  border-right: 2px solid #166534;
+  border-bottom: 4px solid #14532d;
+  box-shadow: 0 4px 6px rgba(21, 128, 61, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.block-3d-purple {
+  background: linear-gradient(180deg, #d36fff 0%, #a855f7 40%, #7e22ce 100%);
+  border-top: 3px solid #e9a9ff;
+  border-left: 2px solid #c084fc;
+  border-right: 2px solid #6b21a8;
+  border-bottom: 4px solid #581c87;
+  box-shadow: 0 4px 6px rgba(126, 34, 206, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+/* Animations */
+@keyframes rainbowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-rainbow {
+  animation: rainbowSpin 6s linear infinite;
+}
+
+@keyframes popBounce {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pop-in {
+  animation: popBounce 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes shakeScreen {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-4px, 3px); }
+  40% { transform: translate(4px, -3px); }
+  60% { transform: translate(-3px, -2px); }
+  80% { transform: translate(3px, 2px); }
+}
+
+.screen-shake {
+  animation: shakeScreen 0.25s ease-in-out;
+}
+
+@keyframes wobbleCell {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-8deg) scale(0.96); }
+  75% { transform: rotate(8deg) scale(0.96); }
+}
+
+.animate-shake {
+  animation: wobbleCell 0.25s ease-in-out;
+}
+
+/* Subtle Breathing Pulse for available pieces in dock */
+@keyframes subtleBreathe {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1) drop-shadow(0 2px 6px rgba(56, 189, 248, 0.15));
+  }
+  50% {
+    transform: scale(1.045);
+    filter: brightness(1.06) drop-shadow(0 4px 12px rgba(56, 189, 248, 0.35));
+  }
+}
+
+.animate-subtle-breathe {
+  animation: subtleBreathe 2.8s ease-in-out infinite;
+}
+
+/* Combo Chain Multiplier Pop & Flame Glow animations */
+@keyframes comboPop {
+  0% { transform: scale(0.65); filter: brightness(1.7); }
+  50% { transform: scale(1.24); filter: brightness(1.3); }
+  75% { transform: scale(0.96); filter: brightness(1.1); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(-3deg); filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.8)); }
+  50% { transform: scale(1.18) rotate(3deg); filter: drop-shadow(0 0 12px rgba(239, 68, 68, 0.95)); }
+}
+
+@keyframes streakPillShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-combo-pop {
+  animation: comboPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-flame-flicker {
+  animation: flameFlicker 1.2s ease-in-out infinite;
+}
+
+.animate-streak-shimmer {
+  background-size: 200% 200%;
+  animation: streakPillShimmer 3s ease infinite;
+}
+
+/* Dynamic Line Clear Explosion & Block Shatter */
+@keyframes lineBlastFlash {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  35% {
+    transform: scale(1.2);
+    filter: brightness(2.4) contrast(1.4);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 45px rgba(250, 204, 21, 0.9);
+  }
+  70% {
+    transform: scale(1.06) rotate(3deg);
+    filter: brightness(2.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.15) rotate(18deg);
+    filter: brightness(3);
+    opacity: 0;
+  }
+}
+
+.animate-block-clearing {
+  animation: lineBlastFlash 0.32s cubic-bezier(0.2, 0.9, 0.3, 1) forwards !important;
+  z-index: 25 !important;
+  pointer-events: none !important;
+}
+
+/* Punchy Board Shockwave Shake */
+@keyframes boardShock {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(-4px, 3px) scale(1.012); }
+  40% { transform: translate(4px, -3px) scale(1.018); }
+  60% { transform: translate(-3px, -2px) scale(1.009); }
+  80% { transform: translate(3px, 2px) scale(1.004); }
+}
+
+.animate-board-shake {
+  animation: boardShock 0.28s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Floating Banner Explosive Entrance */
+@keyframes celebrationPop {
+  0% {
+    transform: translate(-50%, -50%) scale(0.35) rotate(-6deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(2deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(0.96) rotate(-1deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-celebration-banner {
+  animation: celebrationPop 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Custom scrollbar for game modals */
+.game-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.game-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+}
+.game-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(250, 204, 21, 0.6);
+  border-radius: 9999px;
+}
+
+/* Splash Screen Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes floatGentleAlt {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-3deg);
+  }
+}
+
+@keyframes playBtnGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5), 0 8px 0 #15803d, 0 14px 25px rgba(0, 0, 0, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(34, 197, 94, 0.8), 0 8px 0 #15803d, 0 18px 32px rgba(0, 0, 0, 0.7);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes shineSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  20%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-float-alt {
+  animation: floatGentleAlt 5s ease-in-out infinite;
+}
+
+.animate-play-pulse {
+  animation: playBtnGlow 2.2s ease-in-out infinite;
+}
+
+.animate-shine-sweep {
+  animation: shineSweep 3.5s ease-in-out infinite;
+}

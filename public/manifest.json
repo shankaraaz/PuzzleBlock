@@ -1,0 +1,40 @@
+{
+  "short_name": "Block Blast",
+  "name": "Block Blast Puzzle",
+  "id": "com.blockblastpuzzle.game",
+  "package_name": "com.blockblastpuzzle.game",
+  "description": "Block Blast Puzzle - Addictive colorful blast puzzle adventure with juicy animations, combo multipliers, boosters, daily challenges, and leaderboards.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070b14",
+  "theme_color": "#070b14",
+  "categories": ["games", "puzzle"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/aistudio/Glossy_Block_Blast_Puzzle_Icon_193e3783.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

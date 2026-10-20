@@ -1,0 +1,81 @@
+import { DailyChallenge, LeaderboardUser, PlayerProfile } from '../types/game';
+
+export const INITIAL_PLAYER_PROFILE: PlayerProfile = {
+  highScore: 161,
+  currentScore: 37,
+  coins: 450,
+  boosters: {
+    hammer: 2,
+    lineBlast: 2,
+    colorSweep: 1,
+    shuffle: 2,
+    undo: 3,
+  },
+  totalLinesCleared: 12,
+  adsWatched: 2,
+  adRevenueSimulated: 0.08,
+};
+
+export const INITIAL_DAILY_CHALLENGES: DailyChallenge[] = [
+  {
+    id: 'dc-1',
+    title: 'Line Crusher',
+    description: 'Clear 15 lines on the 8x8 board',
+    icon: 'lines',
+    current: 8,
+    target: 15,
+    completed: false,
+    rewardType: 'coins',
+    rewardAmount: 200,
+    claimed: false,
+  },
+  {
+    id: 'dc-2',
+    title: 'Combo Prodigy',
+    description: 'Trigger a Combo x2 or higher',
+    icon: 'combo',
+    current: 1,
+    target: 1,
+    completed: true,
+    rewardType: 'hammer',
+    rewardAmount: 2,
+    claimed: false,
+  },
+  {
+    id: 'dc-3',
+    title: 'High Scorer',
+    description: 'Reach a score of 500 in one game',
+    icon: 'score',
+    current: 37,
+    target: 500,
+    completed: false,
+    rewardType: 'shuffle',
+    rewardAmount: 2,
+    claimed: false,
+  },
+  {
+    id: 'dc-4',
+    title: 'Booster Specialist',
+    description: 'Use Hammer or Line Blast booster',
+    icon: 'booster',
+    current: 0,
+    target: 2,
+    completed: false,
+    rewardType: 'undo',
+    rewardAmount: 2,
+    claimed: false,
+  },
+];
+
+export const INITIAL_LEADERBOARD: LeaderboardUser[] = [
+  { rank: 1, name: 'Oliver Star', avatar: '🦁', score: 98450, level: 25, stars: 75, badge: 'Grand Master' },
+  { rank: 2, name: 'Chloe Sparkle', avatar: '🦊', score: 87200, level: 24, stars: 71, badge: 'Champion' },
+  { rank: 3, name: 'Leo The King', avatar: '🐼', score: 79150, level: 22, stars: 65, badge: 'Diamond' },
+  { rank: 4, name: 'Maya Rainbow', avatar: '🦄', score: 68400, level: 19, stars: 57, badge: 'Platinum' },
+  { rank: 5, name: 'Lucky Blaster (You)', avatar: '🐶', score: 161, level: 5, stars: 11, badge: 'Gold', isUser: true },
+  { rank: 6, name: 'Sammy Rocket', avatar: '🚀', score: 25100, level: 5, stars: 10, badge: 'Silver' },
+  { rank: 7, name: 'Emma Daisy', avatar: '🌸', score: 22800, level: 4, stars: 9, badge: 'Silver' },
+  { rank: 8, name: 'Max Thunder', avatar: '⚡', score: 18900, level: 4, stars: 8, badge: 'Bronze' },
+  { rank: 9, name: 'Zoe Sunshine', avatar: '☀️', score: 14300, level: 3, stars: 6, badge: 'Bronze' },
+  { rank: 10, name: 'Toby Whirlwind', avatar: '🌪️', score: 9200, level: 2, stars: 4, badge: 'Rookie' },
+];
